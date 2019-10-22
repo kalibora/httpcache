@@ -424,6 +424,7 @@ func getEndToEndHeaders(respHeaders http.Header) []string {
 		"Trailers":            {},
 		"Transfer-Encoding":   {},
 		"Upgrade":             {},
+		"Content-Encoding":    {}, // Suppress "Error: gzip: invalid header"
 	}
 
 	for _, extra := range strings.Split(respHeaders.Get("connection"), ",") {
